@@ -18,16 +18,16 @@ This repository Terraform's structure is divided in 3 files:
 
 ___
 # Setting up the environment
-1. **Downloading the repository:**<br />
+## 1. **Downloading the repository:**<br />
 
 ```
-$ wget https://github.com/DaviSoares454/K8S-DigitalOcean-Terraform-ATC/archive/refs/heads/main.zip;
+$ wget https://github.com/DaviSoares454/K8S-DigitalOcean-Terraform-ATC/archive/refs/heads/main.zip
 $ unzip main.zip
 $ cd K8S-DigitalOcean-Terraform-ATC-main/
 ```
-2. **Editing the files:**<br /> 
+## 2. **Editing the files:**<br /> 
 Here you will find only the main configurations for each file, but you are free to edit the entire contents as you wish.
-  2.  **1-digitalocean.tf:**<br />
+  -  **1-digitalocean.tf:**<br />
   Starting at line 24, here you can edit the cluster name, region, worker nodes size and quantity.<br />
   
   ```
@@ -36,13 +36,13 @@ Here you will find only the main configurations for each file, but you are free 
   31    size = "s-1vcpu-2gb"
   32    node_count = 3
   ```
-  2.  **2-deploy-app.tf:**<br />
+  -  **2-deploy-app.tf:**<br />
   The last component in this file is the hello-world ingress. Here you configure the domain you want to use as your hello-world page.<br />
   
   ```
   94    host = "example.com"
   ```
-  3.  **3-monitoring.tf:**<br />
+  -  **3-monitoring.tf:**<br />
   As the last file, here you can edit the domain, but now used to expose **grafana's** frontend.<br />
   
   ```
@@ -50,11 +50,12 @@ Here you will find only the main configurations for each file, but you are free 
   ```
   
 
-3. **Running the code:**<br />
-First, run terrafom following command to validate and plan the infraestructure provisioning.  <br />
+## 3. **Running the code:**<br />
+First, run terrafom following commands to download providers and validate and plan the infraestructure provisioning.  <br />
 
 ```
-$ terraform apply;
+$ terraform init
+$ terraform apply
 ```
 
 
@@ -75,6 +76,8 @@ Do you want to perform these actions?
 
 The infrastructure deployment will take about 10 minutes to complete.<br />
 After completing, Terraform CLI will show _"Apply complete!"_ message and how many resources did it changed.<br /> <br />
+
+⚠ **IMPORTANT** ⚠ <br />
 Now, with your cluster and deployments set, you need to copy the Load Balancer's IP that was created in DigitalOcean, you can use DigitalOcean's dashboard to do that, or download the kubeconfig file from your cluster though DigitalOcean as well. <br />
 Then you need to point your domain **(the same host that you configured at the 2-deploy-app.tf and 3-monitoring.tf files)** to that IP. <br />
 
@@ -91,7 +94,7 @@ In this results example, I used _ecsys.io_ domain. So I ended up with two web li
 
 ![Hostname changes everytime you refresh the page (LoadBalacing).](/results/hello-world.png "hello-world result.")<br />
 
-Hostname changes everytime you refresh the page due to the LoadBalacing.<br /><br /><br />
+Hostname changes due to the LoadBalacing everytime you refresh the page.<br /><br /><br />
 2. **Grafana web page:**<br />
 Default login username: __admin__<br />
 Default password: __prom-operator__<br /><br />
