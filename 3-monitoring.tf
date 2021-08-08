@@ -34,7 +34,7 @@ resource "kubernetes_ingress" "ingress-monitor" {
   }
   spec {
     rule {
-      host = "graf.ecsys.io"
+      host = "graf.example.com"
       http {
         path {
           path = "/"

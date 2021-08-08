@@ -91,7 +91,7 @@ resource "kubernetes_ingress" "ingress-hello-world" {
   }
   spec {
     rule {
-      host = "ecsys.io"
+      host = "example.com"
       http {
         path {
           path = "/"
