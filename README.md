@@ -89,11 +89,13 @@ In this results example, I used _ecsys.io_ domain. So I ended up with two web li
 **graf.ecsys.io** (for the grafana web page).
 1. **Hello-world web page:**<br />
 
-![Hostname changes everytime you refresh the page (LoadBalacing).](/results/hello-world.png "hello-world result.")
+![Hostname changes everytime you refresh the page (LoadBalacing).](/results/hello-world.png "hello-world result.")<br />
 
+Hostname changes everytime you refresh the page due to the LoadBalacing.<br /><br /><br />
 2. **Grafana web page:**<br />
-Default login username: admin<br />
-Default password: prom-operator<br /><br />
+Default login username: __admin__<br />
+Default password: __prom-operator__<br /><br />
 ![Grafana login page.](/results/grafana-login.png "Grafana login page.")<br /><br />
+
+![Grafana dashboard example.](/results/grafana-dashboard.png "Grafana dashboard example.")<br />
 Grafana dashboard example<br />
-![Grafana login page.](/results/grafana-dashboard.png "Grafana login page.")
